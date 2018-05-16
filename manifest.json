@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+    "name": "SHOWROOM Extension",
+    "version": "1.0.0.1",
+    "description": "SHOWROOMの拡張ツールです。",
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+    "permissions": [
+        "tabs"
+    ],
+    "content_scripts": [{
+        "matches": ["https://www.showroom-live.com/*"],
+        "js": ["js/lib/jquery-3.3.1.min.js", "js/sr_monitor.js"]
+    }],
+    "background": {
+        "scripts": ["js/sr_background.js"],
+        "persistent": false
+    },
+    "web_accessible_resources": [
+        "img/*"
+    ]
+}
